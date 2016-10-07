@@ -14,3 +14,5 @@ deploy:
   detect_encoding: true
   on:
     tags: true
+after_success:
+  "curl --ftp-create-dirs -T _build/EvanOman.pdf -u $FTP_U:$FTP_P ftp://ftp.evanoman.com/EvanOman.pdf"
