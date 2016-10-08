@@ -12,5 +12,7 @@ deploy:
   - _build/EvanOman.pdf
   skip_cleanup: true
   detect_encoding: true
+  on:
+    tags: true
 after_success:
   "curl --ftp-create-dirs -T _build/EvanOman.pdf -u $FTP_U:$FTP_P ftp://ftp.evanoman.com/public_html/EvanOman.pdf"
