@@ -38,9 +38,11 @@
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 
-\setlist[itemize]{label=$\triangleright$}
+%\setlist[itemize]{label=$\triangleright$}
 
-\newcommand{\resitem}[1]{\item #1 
+\newcommand{\myitem}{\item[$\triangleright$]}
+
+\newcommand{\resitem}[1]{\item[$\triangleright$] #1 
 
 \vspace{-.1in}
 }
@@ -96,7 +98,7 @@
 			\vspace{-.1in}
 			\begin{itemize}
 				\resitem{Studied under Teaching Assistantship and Chancellor's Fellowship, obtained 20 credits of graduate level CS, \textbf{GPA: 3.67}}
-				\item Key Courses: Artificial Intelligence(\verb!Java!, \verb!Prolog!), Computer Graphics(\verb!C/C++!), Linear Programming, Natural Language Processing (\verb!Perl!), Advanced Data Structures(\verb!C/C++!), Theory of Computation, Graph Theory, Dynamical Systems
+				\myitem Key Courses: Artificial Intelligence(\verb!Java!, \verb!Prolog!), Computer Graphics(\verb!C/C++!), Linear Programming, Natural Language Processing (\verb!Perl!), Advanced Data Structures(\verb!C/C++!), Theory of Computation, Graph Theory, Dynamical Systems
 			\end{itemize}
 		% Bethany
 		\rressubheading{Bethany Lutheran College}{B.A. Mathematics}{May 2013}
@@ -113,7 +115,7 @@
 			\vspace{-.1in}
 			\begin{itemize}
 				\resitem{Develop algorithms and systems for intelligence, surveillance, and reconnaissance contracts for a variety of DoD agencies}
-				\item Obtained Secret Level DoD clearance, time split between background research and \verb!Java/C/MATLAB! prototyping
+				\myitem Obtained Secret Level DoD clearance, time split between background research and \verb!Java/C/MATLAB! prototyping
 			\end{itemize}
 		% Salt IO
 		\rressubheading{Salt IO}{Data Science Consultant (Part Time)}{November 2015 - Present}
