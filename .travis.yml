@@ -8,6 +8,8 @@ deploy:
   provider: releases
   api_key:
     secure: P8bUW1XjLGZHhHwjpYTbUjA3E/IV4y3lnHaeFMmzENjPumAwR1jn+WdR42nQJxT6wBs/3JQIbCcF5djdgDYZBt2oLGYixrDp4389mPN9FL37r65+P7ZVTN7oOl49tLrWdVEqPeIORPekChf4hmV1rN/Yx8lP1GMsArHomMPHz822LGFRUyrxwNMk+kQnJ6oQQ1J8++tvmvbuF04lWc79vUI8NfMc1nSkBgpBdM2hwWuy1pnZ/9WCmhUDPv+N45b5BpVMl8HAI4WtmJcjdmcB05bShFO3uOWGmkWPN9J9DUWzzoEz8Rqxfg2h7i7f8slULP+WqcT18swt5O7O8o0luCl8qvvJ5z8fxr3aFGEqHB1ShXlgW66+RuclwHJprSE2AEHKu9Kx/gZCcY8MdLN4pFY6F9GI0fq2ds02TcTcxrAInWEew45wPmLX35p9aZQTIVXatxUn+aRwDaBqbdbLJ6d0VmsdzUrlE3ADvfi47STte1CyT4J1sZjIuQPBeD1W0N2owomoCyQHNulrisC3hRwuSFt0CYiWWz8rLXLb6ZWRm6iLqnOUe1yvRGGMvDeoqi8exoeEKhcKcfRAqqkaijTQIEIloEKDSUiyvwVjryAgEHYvHufZiVr5CAnILICvtmApY4YPpa4dkmAuXGeWKX4RjY4g3aRDC+NhcewFwQc=
-  file: ".travis.yml"
+  file:
+  - _build/EvanOman.pdf
+  skip_cleanup: true
   on:
     repo: EvanOman/Resume
