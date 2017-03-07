@@ -6,7 +6,10 @@
 	xmlHttp.open( "GET", "https://api.github.com/repos/EvanOman/Resume/releases/latest", false ); // false for synchronous request
 	xmlHttp.send( null );
 	var repoData = JSON.parse(xmlHttp.responseText);
-	window.location = repoData.assets[0].browser_download_url;
+	var pdfUrl =  repoData.assets[0].browser_download_url;
+	var image = document.getElementsByID("pdf-frame");
+	image.src = pdfUrl;
 </script>
+<iframe id="pdf-frame" src="" style="width: 100%;height: 100%;border: none;"></iframe>
 </body>
 </html>
