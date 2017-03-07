@@ -9,7 +9,7 @@
 	var repoData = JSON.parse(xmlHttp.responseText);
 	var pdfUrl =  repoData.assets[0].browser_download_url;
 	var image = document.getElementById("pdf-frame");
-	image.src = pdfUrl;
+	image.data = pdfUrl;
 </script>
 </body>
 </html>
