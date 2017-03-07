@@ -1,0 +1,12 @@
+<!DOCTYPE HTML>
+<html><head><!-- yada yada yada --></head>
+<body>
+<script type='text/javascript'>
+	var xmlHttp = new XMLHttpRequest();
+	xmlHttp.open( "GET", "https://api.github.com/repos/EvanOman/Resume/releases/latest", false ); // false for synchronous request
+	xmlHttp.send( null );
+	var repoData = JSON.parse(xmlHttp.responseText);
+	window.location = repoData.assets[0].browser_download_url;
+</script>
+</body>
+</html>
