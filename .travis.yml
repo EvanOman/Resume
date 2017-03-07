@@ -11,5 +11,6 @@ deploy:
   file:
   - _build/EvanOman.pdf
   skip_cleanup: true
+  detect_encoding: true
   on:
     tags: true
