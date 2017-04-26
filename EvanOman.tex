@@ -17,6 +17,8 @@
 \usepackage{array}
 \usepackage{enumitem}
 \usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage[margin=0.25in]{geometry}
 
 \newcommand{\CC}{C\nolinebreak[4]\hspace{-.05em}\raisebox{.4ex}{\relsize{-3}{\textbf{++}}}}
 
@@ -28,11 +30,11 @@
 
 % Adjust margins on all sides
 % TODO: This is a terrible hack, try doing something cleaner
-\addtolength{\oddsidemargin}{-0.6in}
-\addtolength{\evensidemargin}{-0.5in}
-\addtolength{\textwidth}{1.1254in}
-\addtolength{\topmargin}{-0.5in}
-\addtolength{\textheight}{1.0in}
+% \addtolength{\oddsidemargin}{-0.6in}
+% \addtolength{\evensidemargin}{-0.5in}
+% \addtolength{\textwidth}{1.1254in}
+% \addtolength{\topmargin}{-0.5in}
+% \addtolength{\textheight}{1.0in}
 
 %%%%%%%%%%% My Custom Commands %%%%%%%%%%%
 
@@ -46,15 +48,14 @@
 
 \newcommand{\resitem}[1]{\item[$\triangleright$] #1 
 
-\vspace{-.1in}
 }
 
 % Large Section heading w/ gray background
-\newcommand{\resheading}[1]{
+\newcommand{\resHeading}[1]{
 	{
 		\large\colorbox{mygrey}
 		{
-			\begin{minipage}{.98\textwidth}
+			\begin{minipage}{\textwidth}
 
 			\centerline{\textbf{#1 \vphantom{p\^{E}}}}
 			\end{minipage}
@@ -62,25 +63,18 @@
 	}
 }
 
-% Each of these define the multi-column job/school headings
-\newcommand{\ressubheading}[4]{
-	\begin{tabular*}{7.5in}{l@{\extracolsep{\fill}}r}
-			\textbf{#1} & #2 \\
-			\textit{#3} & \textit{#4} \\
-	\end{tabular*}\vspace{-6pt}
-}
-
-\newcommand{\ressubheadingg}[2]{
-	\begin{tabular*}{7.6in}{L{5.25in}R{2.4in}}
+\newcommand{\twoColResSubHeading}[2]{
+	\begin{tabularx}{\textwidth}{Xr}
 			\textbf{#1} & \textbf{#2}
-	\end{tabular*}
+	\end{tabularx}
 }
 
-\newcommand{\rressubheading}[3]{
-	\begin{tabular*}{7.6in}{L{2.4in}C{2.85in}R{2.4in}}
-			\textbf{#1} & \textit{\textbf{#2}}  & \textbf{#3}
-	\end{tabular*}\vspace{-12pt}
+\newcommand{\threeColResSubHeading}[3]{
+	\begin{tabularx}{\textwidth}{XcX}
+			\textbf{#1} & \centering \textit{\textbf{#2}}  & \hfill\textbf{#3}
+	\end{tabularx}
 }
+
 %%%%%%%%%%% End Custom Commands %%%%%%%%%%%
 
 
@@ -93,116 +87,84 @@
 		Cell: 612.207.9816 & \href{http://www.evanoman.com}{www.evanoman.com}\\
 		Residence: Eagan, MN& \href{mailto:evan058@gmail.com}{evan058@gmail.com}\\
 	\end{tabular*}
-	\vspace{0.1in}
 	% Education Section
-	\resheading{Education}
+	\resHeading{Education}
 		% UMD
-		\rressubheading{University of MN Duluth}{M.S. Applied Mathematics, CS Minor}{May 2015}
-			\vspace{-.1in}
+		\threeColResSubHeading{University of MN Duluth}{M.S. Applied Mathematics, CS Minor}{May 2015}
 			\begin{itemize}
 				\resitem{Studied under Teaching Assistantship and Chancellor's Fellowship, obtained 20 credits of graduate level CS, \textbf{GPA: 3.67}}
 				\myitem Key Courses: Artificial Intelligence(\verb!Java!, \verb!Prolog!), Computer Graphics(\verb!C/C++!), Linear Programming, Natural Language Processing (\verb!Perl!), Advanced Data Structures(\verb!C/C++!), Theory of Computation, Graph Theory, Dynamical Systems
 			\end{itemize}
 		% Bethany
-		\rressubheading{Bethany Lutheran College}{B.A. Mathematics}{May 2013}
-			\vspace{-.1in}
+		\threeColResSubHeading{Bethany Lutheran College}{B.A. Mathematics}{May 2013}
 			\begin{itemize}
 				\resitem{Graduated Magna Cum Laude with \textbf{in-major GPA of 3.8} while keeping several jobs and working to graduate in 3 years}
 				\resitem{Key Courses: Numerical Analysis; C$\sharp$ Programming I + II; Rings, Modules, and Homological Algebra, Statics + Dynamics}
 			\end{itemize}
-			\vspace{.1in}
 	% Work Experience Section
-	\resheading{Experience}
+	\resHeading{Experience}
 		% Black River
-		\rressubheading{Black River Systems Co.}{Systems/Algorithm Engineer}{May 2015 - Present}
-			\vspace{-.1in}
+		\threeColResSubHeading{Black River Systems Co.}{Systems/Algorithm Engineer}{May 2015 - Present}
 			\begin{itemize}
 				\resitem{Develop algorithms and systems for intelligence, surveillance, and reconnaissance contracts for a variety of DoD agencies}
 				\myitem Obtained Secret Level DoD clearance, time split between background research and \verb!Java/MATLAB! prototyping
 			\end{itemize}
 		% Salt IO
-		\rressubheading{Salt IO}{Data Science Consultant (Part Time)}{November 2015 - September 2016}
-			\vspace{-.1in}
+		\threeColResSubHeading{Salt IO}{Data Science Consultant (Part Time)}{November 2015 - September 2016}
 			\begin{itemize}
 				\resitem{Assisted with a variety of data preparation and cleaning tasks on mortgage securitization data using Apache Spark (Scala)}
 				\resitem{Researched and implemented NLP tools for info extraction and conversational agent problems (Spark, CoreNLP, Python)}
 			\end{itemize}
-			\vspace{.1in}
 		% OSI 
-		\rressubheading{Open Systems International}{Software Engineering Intern}{May 2014 - November 2014}
-			\vspace{-.1in}
+		\threeColResSubHeading{Open Systems International}{Software Engineering Intern}{May 2014 - November 2014}
 			\begin{itemize}
 				\resitem{Completed multiple production quality enhancements on a large power distribution network optimization product. Required rapidly developing of understanding of domain concepts and a large code base written in an unfamiliar language(C)}
 				\resitem{Participated in regular team code reviews, sprint planning sessions, and training presentations about a variety of topics}
 			\end{itemize}
-			\vspace{.1in}
 		% Edmentum
-		\rressubheading{Edmentum}{Software Development Intern}{May 2013 - August 2013}
-			\vspace{-.1in}
+		\threeColResSubHeading{Edmentum}{Software Development Intern}{May 2013 - August 2013}
 			\begin{itemize}
 				\resitem{Developed a physics coursework web client for use within the Edmentum education suite while on an agile team of interns}
 				\resitem{Performed sprint planning, product design, code reviews, and product demos; employed JavaScript design patterns}
 			\end{itemize}
-			\vspace{.1in}
-			\rressubheading{Eckhardt Optics LLC}{Software Engineering Intern}{May 2012 - August 2012}
-			\vspace{-.1in}
+		% Eckhardt Optics
+		\threeColResSubHeading{Eckhardt Optics LLC}{Software Engineering Intern}{May 2012 - August 2012}
 			\begin{itemize}
 				\resitem{Constructed a browser client which allows employer's team to view Bugzilla bugs in a Kanban graphical representation}
 			\end{itemize}
-			\vspace{.1in}
 	% Projects Section
-	\resheading{Projects}
+	\resHeading{Projects}
 		% Aspect Extraction
-		\ressubheadingg{Restaurant Review Aspect/Sentiment Extraction(Spark,Scala)}{Salt IO}
-			\vspace{-.25in}
+		\twoColResSubHeading{Restaurant Review Aspect/Sentiment Extraction(Spark,Scala)}{Salt IO}
 			\begin{itemize}
 				\resitem{Extracted specific aspects and sentiments from online reviews of several restaurants using CoreNLP, Spark, and Scala}
 				\resitem{Researched info extraction algorithms, tested different methods, processed and cleaned data, achieved desired accuracy}
 			\end{itemize}
-		\vspace{.1in}
 		% Feeder Configuration
-		\ressubheadingg{Feeder Reconfiguration with Forecast Data(C)}{Open Systems International}
-			\vspace{-.25in}
+		\twoColResSubHeading{Feeder Reconfiguration with Forecast Data(C)}{Open Systems International}
 			\begin{itemize}
 				\resitem{Enhanced OSI's Feeder Reconfiguration product to allow the use of forecast data for all network optimization objectives}
 				\resitem{Achieved this objective by generalizing the program flow to use real time or forecast data, modifying the user interface and databases to allow run mode specification, performing a variety of testing procedures, and updating documentation}
 			\end{itemize}
-		\vspace{.1in}
 		% UMD Research
-		\ressubheadingg{\href{https://www.researchgate.net/publication/281248352_Infinite_Levels_of_Complexity_in_a_Family_of_One-Dimensional_Singular_Dynamical_Systems}{Dynamical Systems Research}(Python, Mathematica)}{University of MN Duluth}
-			\vspace{-.25in}
+		\twoColResSubHeading{\href{https://www.researchgate.net/publication/281248352_Infinite_Levels_of_Complexity_in_a_Family_of_One-Dimensional_Singular_Dynamical_Systems}{Dynamical Systems Research}(Python, Mathematica)}{University of MN Duluth}
 			\begin{itemize}
 				\resitem{Studied the dynamics of singular perturbations of a family of functions using numerical, visual, and analytical techniques.}
 				\resitem{Managed to prove the existence of several infinite parameter accumulations. Received paid Summer Research Fellowship.}
 			\end{itemize}
-		\vspace{.1in}
 		% NLP Decision List
-		\ressubheadingg{\href{https://github.com/EvanOman/nlp-decision-list}{Decision List for Word Sense Disambiguation}(Perl)}{University of MN Duluth}
-			\vspace{-.25in}
+		\twoColResSubHeading{\href{https://github.com/EvanOman/nlp-decision-list}{Decision List for Word Sense Disambiguation}(Perl)}{University of MN Duluth}
 			\begin{itemize}
 				\resitem{Implemented a machine learning method which used local context to determine the intended sense of a specified word}
 				\resitem{Applied object oriented structures within Perl to develop a list of ``collocation'' factors from the training data and sort them according to their correlative strength. When applied to a test set the algorithm achieved 82\% accuracy}
 			\end{itemize}
-		\vspace{.1in}
-		% Tracker Web
-		% \ressubheadingg{\href{https://github.com/EvanOman/Tracker-Browser-Client}{Tracker Web Client}(HTML, CSS, JavaScript)}{Edmentum}
-		% 	\vspace{-.25in}
-		% 	\begin{itemize}
-		% 		\resitem{\href{https://www.cabrillo.edu/~dbrown/tracker/}{Tracker} is a video analysis and physics modeling tool written in Java and used by Edmentum for physics courses. This project aimed to created a client-side web app allowing students to view Tracker content without browser plugins or Java}
-		% 		\resitem{Developed a full-featured video player which animated individual GIF frames, implemented several numerical calculus algorithms, constructed interactive data displays, and parsed Tracker(XML) files for position and video data}
-		% 	\end{itemize}
-		% \vspace{.1in}
 		% Bethany Thesis
-		\ressubheadingg{\href{https://drive.google.com/file/d/0B5IOv9SzzDlvdnowZVpKRzhXOU0/edit?usp=sharing}{\textit{An Introduction to Computational Cubical Homology}}(Some Python)}{Bethany Lutheran College}
-			\vspace{-.1in}
+		\twoColResSubHeading{\href{https://drive.google.com/file/d/0B5IOv9SzzDlvdnowZVpKRzhXOU0/edit?usp=sharing}{\textit{An Introduction to Computational Cubical Homology}}(Some Python)}{Bethany Lutheran College}
 			\begin{itemize}
-				\vspace{-.15in}
 				\resitem{Investigated the theory of Computational Homology with a focus on its application to cubical data analysis. The project culminated in an application of existing tools(the \href{http://chomp.rutgers.edu/}{CHomP} utility) to a geometric analysis of Minecraft block data}
 			\end{itemize}
-			\vspace{.1in}
 	% Skills Section 
-	\resheading{Skills}
-		\vspace{-.1in}
+	\resHeading{Skills}
 		\begin{description}
 			\item[Languages:]
 				Have worked in \verb!Scala!(top 10\% on Stack Overflow), \verb!Java!, \verb!C!, \verb!R!, \verb!Perl!, \verb!Python!, \LaTeX; Apache Spark(top 5\% on Stack Overflow); Some knowledge of \verb!C++!, \verb!MATLAB!
