@@ -6,3 +6,6 @@ script:
 - pdflatex -output-directory _build EvanOman.tex
 after_success:
   "curl --ftp-create-dirs -T _build/EvanOman.pdf -u $FTP_U:$FTP_P ftp://ftp.evanoman.com/public_html/EvanOman.pdf"
+branches:
+  only:
+  - master
