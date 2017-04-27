@@ -1,4 +1,4 @@
-P% resume.tex
+% resume.tex
 %
 % (c) 2002 Matthew Boedicker <mboedick@mboedick.org> (original author) http://mboedick.org
 % (c) 2003-2007 David J. Grant <davidgrant-at-gmail.com> http://www.davidgrant.ca
@@ -12,37 +12,26 @@ P% resume.tex
 \documentclass[letterpaper,10pt]{article}
 
 \usepackage[empty]{fullpage}
-\usepackage{color,url,hyperref}
+\usepackage{color,url,hyperref,setspace}
 \usepackage[justify]{ragged2e}
 \usepackage{array}
 \usepackage{enumitem}
 \usepackage{graphicx}
 \usepackage{tabularx}
-\usepackage[margin=0.25in]{geometry}
-
-\newcommand{\CC}{C\nolinebreak[4]\hspace{-.05em}\raisebox{.4ex}{\relsize{-3}{\textbf{++}}}}
+\usepackage[margin=0.375in]{geometry}
 
 \definecolor{mygrey}{gray}{.80}
-\raggedbottom
 \centering
 \setlength{\tabcolsep}{0in}
+\onehalfspacing
+\setlength{\parskip}{0pt}
+\raggedbottom
 
-
-% Adjust margins on all sides
-% TODO: This is a terrible hack, try doing something cleaner
-% \addtolength{\oddsidemargin}{-0.6in}
-% \addtolength{\evensidemargin}{-0.5in}
-% \addtolength{\textwidth}{1.1254in}
-% \addtolength{\topmargin}{-0.5in}
-% \addtolength{\textheight}{1.0in}
+\setlist[itemize]{topsep=0pt,itemsep=-3pt,partopsep=0pt,parsep=0pt}
+\setlist[description]{topsep=0pt,itemsep=-3pt,partopsep=0pt,parsep=0pt}
 
 %%%%%%%%%%% My Custom Commands %%%%%%%%%%%
 
-\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-
-%\setlist[itemize]{label=$\triangleright$}
 
 \newcommand{\myitem}{\item[$\triangleright$]}
 
@@ -55,7 +44,7 @@ P% resume.tex
 	{
 		\large\colorbox{mygrey}
 		{
-			\begin{minipage}{\textwidth}
+			\begin{minipage}{0.98\textwidth}
 
 			\centerline{\textbf{#1 \vphantom{p\^{E}}}}
 			\end{minipage}
@@ -84,11 +73,11 @@ P% resume.tex
 
 \begin{document}
 	% Header information 
-	\begin{tabular*}{7.6in}{l@{\extracolsep{\fill}}r}
+	\begin{tabularx}{\textwidth}{lXr}
 		\textbf{\Large Evan D. Oman}  &   \\
-		Cell: 612.207.9816 & \href{http://www.evanoman.com}{www.evanoman.com}\\
-		Residence: Eagan, MN& \href{mailto:evan058@gmail.com}{evan058@gmail.com}\\
-	\end{tabular*}
+		Cell: 612.207.9816 & \hfill\href{http://www.evanoman.com}{www.evanoman.com}\\
+		Residence: Eagan, MN& \hfill\href{mailto:evan058@gmail.com}{evan058@gmail.com}\\
+	\end{tabularx}
 	% Education Section
 	\resHeading{Education}
 		% UMD
@@ -112,28 +101,28 @@ P% resume.tex
 				\myitem Obtained Secret Level DoD clearance, time split between background research and \verb!Java/MATLAB! prototyping
 			\end{itemize}
 		% Salt IO
-		\threeColResSubHeading{Salt IO}{Data Science Consultant (Part Time)}{November 2015 - September 2016}
+		\threeColResSubHeading{Salt IO}{Data Science Consultant (Part Time)}{Nov. 2015 - Sep. 2016}
 			\begin{itemize}
 				\resitem{Assisted with a variety of data preparation and cleaning tasks on mortgage securitization data using Apache Spark (Scala)}
 				\resitem{Researched and implemented NLP tools for info extraction and conversational agent problems (Spark, CoreNLP, Python)}
 			\end{itemize}
 		% OSI 
-		\threeColResSubHeading{Open Systems International}{Software Engineering Intern}{May 2014 - November 2014}
+		\threeColResSubHeading{Open Systems International}{Software Engineering Intern}{May 2014 - Nov. 2014}
 			\begin{itemize}
 				\resitem{Completed multiple production quality enhancements on a large power distribution network optimization product. Required rapidly developing of understanding of domain concepts and a large code base written in an unfamiliar language(C)}
 				\resitem{Participated in regular team code reviews, sprint planning sessions, and training presentations about a variety of topics}
 			\end{itemize}
 		% Edmentum
-		\threeColResSubHeading{Edmentum}{Software Development Intern}{May 2013 - August 2013}
+		\threeColResSubHeading{Edmentum}{Software Development Intern}{May 2013 - Aug. 2013}
 			\begin{itemize}
 				\resitem{Developed a physics coursework web client for use within the Edmentum education suite while on an agile team of interns}
 				\resitem{Performed sprint planning, product design, code reviews, and product demos; employed JavaScript design patterns}
 			\end{itemize}
 		% Eckhardt Optics
-		\threeColResSubHeading{Eckhardt Optics LLC}{Software Engineering Intern}{May 2012 - August 2012}
-			\begin{itemize}
-				\resitem{Constructed a browser client which allows employer's team to view Bugzilla bugs in a Kanban graphical representation}
-			\end{itemize}
+		% \threeColResSubHeading{Eckhardt Optics LLC}{Software Engineering Intern}{May 2012 - Aug. 2012}
+		% 	\begin{itemize}
+		% 		\resitem{Constructed a browser client which allows employer's team to view Bugzilla bugs in a Kanban graphical representation}
+		% 	\end{itemize}
 	% Projects Section
 	\resHeading{Projects}
 		% Aspect Extraction
@@ -167,6 +156,7 @@ P% resume.tex
 			\end{itemize}
 	% Skills Section 
 	\resHeading{Skills}
+	\vspace{-10pt}
 		\begin{description}
 			\item[Languages:]
 				Have worked in \verb!Scala!(top 10\% on Stack Overflow), \verb!Java!, \verb!C!, \verb!R!, \verb!Perl!, \verb!Python!, \LaTeX; Apache Spark(top 5\% on Stack Overflow); Some knowledge of \verb!C++!, \verb!MATLAB!
