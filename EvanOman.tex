@@ -11,24 +11,28 @@
 
 \documentclass[letterpaper,10pt]{article}
 
-\usepackage[empty]{fullpage}
-\usepackage{color,url,hyperref,setspace}
+%\usepackage[empty]{fullpage}
+\usepackage{color,url,hyperref,setspace,parskip,tcolorbox}
 \usepackage[justify]{ragged2e}
-\usepackage{array}
 \usepackage{enumitem}
-\usepackage{graphicx}
+%\usepackage{graphicx}
 \usepackage{tabularx}
 \usepackage[margin=0.375in]{geometry}
 
+
+
+\pagenumbering{gobble}
+
 \definecolor{mygrey}{gray}{.80}
 \centering
-\setlength{\tabcolsep}{0in}
-\onehalfspacing
-\setlength{\parskip}{0pt}
-\raggedbottom
+\setlength{\parskip}{3pt}
+%\onehalfspacing
+\newlength{\mySpacing}
+\setlength{\mySpacing}{0pt}
+%\raggedbottom
 
-\setlist[itemize]{topsep=0pt,itemsep=-3pt,partopsep=0pt,parsep=0pt}
-\setlist[description]{topsep=0pt,itemsep=-3pt,partopsep=0pt,parsep=0pt}
+\setlist[itemize]{itemsep=0pt,topsep=0pt,partopsep=0pt,parsep=0pt}
+\setlist[description]{itemsep=0pt,topsep=0pt,partopsep=0pt,parsep=0pt}
 
 %%%%%%%%%%% My Custom Commands %%%%%%%%%%%
 
@@ -42,13 +46,14 @@
 % Large Section heading w/ gray background
 \newcommand{\resHeading}[1]{
 	{
-		\large\colorbox{mygrey}
-		{
-			\begin{minipage}{0.98\textwidth}
-
-			\centerline{\textbf{#1 \vphantom{p\^{E}}}}
-			\end{minipage}
-		}
+		\begin{tcolorbox}[size=title,oversize, sharp corners, colback=mygrey, colframe=mygrey]%, left=56pt, right=90pt]
+			\centering\textbf{\large #1}
+		\end{tcolorbox} 
+		% \large\colorbox{mygrey}
+		% {
+		% 	\centering
+		% 	\textbf{#1 }
+		% }
 	}
 }
 
@@ -62,7 +67,7 @@
 % Three column subsection
 \newcommand{\threeColResSubHeading}[3]{
 	\begin{tabularx}{\textwidth}{XcX}
-			\textbf{#1} & \centering \textit{\textbf{#2}}  & \hfill\textbf{#3}
+			\textbf{#1} & \textit{\textbf{#2}}  & \hfill\textbf{#3}
 	\end{tabularx}
 }
 
@@ -118,7 +123,7 @@
 				\resitem{Developed a physics coursework web client for use within the Edmentum education suite while on an agile team of interns}
 				\resitem{Performed sprint planning, product design, code reviews, and product demos; employed JavaScript design patterns}
 			\end{itemize}
-		% Eckhardt Optics
+		%Eckhardt Optics
 		% \threeColResSubHeading{Eckhardt Optics LLC}{Software Engineering Intern}{May 2012 - Aug. 2012}
 		% 	\begin{itemize}
 		% 		\resitem{Constructed a browser client which allows employer's team to view Bugzilla bugs in a Kanban graphical representation}
@@ -156,18 +161,31 @@
 			\end{itemize}
 	% Skills Section 
 	\resHeading{Skills}
-	\vspace{-10pt}
-		\begin{description}
-			\item[Languages:]
-				Have worked in \verb!Scala!(top 10\% on Stack Overflow), \verb!Java!, \verb!C!, \verb!R!, \verb!Perl!, \verb!Python!, \LaTeX; Apache Spark(top 5\% on Stack Overflow); Some knowledge of \verb!C++!, \verb!MATLAB!
-			\item[Applications/Tools:]
-			Mathematica, Windows+Linux CLI, WinCVS, Github(\href{https://www.github.com/EvanOman}{EvanOman}), RStudio, Apache Spark, IntelliJ
+		% \begin{description}
+		% 	\item[Languages:]
+		% 		Have worked in \verb!Scala!(top 10\% on Stack Overflow), \verb!Java!, \verb!C!, \verb!R!, \verb!Perl!, \verb!Python!, \LaTeX; Apache Spark(top 5\% on Stack Overflow); Some knowledge of \verb!C++!, \verb!MATLAB!
+		% 	\item[Applications/Tools:]
+		% 	Mathematica, Windows+Linux CLI, WinCVS, Github(\href{https://www.github.com/EvanOman}{EvanOman}), RStudio, Apache Spark, IntelliJ
 
-			\item[Scores/Certificates:]
-			ACT 33(99\%), GRE V: 160(84\%) Q: 163(87\%); Coursera: \href{https://www.coursera.org/account/accomplishments/records/cxq3vN5HB76be56t}{R Programming}, \href{https://www.coursera.org/account/accomplishments/records/Xt3sCA24Qz3Par7M}{Getting and Cleaning Data}, \href{https://www.coursera.org/account/accomplishments/records/yPex7nURcXCYdsse}{Statistical Inference}, \href{https://www.coursera.org/account/accomplishments/records/XMkgJcmHPGtNBXsU}{Exploratory Data Analysis}, \href{https://www.coursera.org/account/accomplishments/records/Qx8qaDCvw9ZNQtqP}{Regression Models}, \href{https://www.coursera.org/account/accomplishments/records/g5LfcvAD5rJuEnGX}{Reproducible Research},
-			\href{https://www.coursera.org/account/accomplishments/verify/ZNTJVMJKSH}{Practical Machine Learning}
+		% 	\item[Scores/Certificates:]
+		% 	ACT 33(99\%), GRE V: 160(84\%) Q: 163(87\%); Coursera: \href{https://www.coursera.org/account/accomplishments/records/cxq3vN5HB76be56t}{R Programming}, \href{https://www.coursera.org/account/accomplishments/records/Xt3sCA24Qz3Par7M}{Getting and Cleaning Data}, \href{https://www.coursera.org/account/accomplishments/records/yPex7nURcXCYdsse}{Statistical Inference}, \href{https://www.coursera.org/account/accomplishments/records/XMkgJcmHPGtNBXsU}{Exploratory Data Analysis}, \href{https://www.coursera.org/account/accomplishments/records/Qx8qaDCvw9ZNQtqP}{Regression Models}, \href{https://www.coursera.org/account/accomplishments/records/g5LfcvAD5rJuEnGX}{Reproducible Research},
+		% 	\href{https://www.coursera.org/account/accomplishments/verify/ZNTJVMJKSH}{Practical Machine Learning}
 
-			\item[Leadership Experience:]
-			BLC: Student Body President, Resident Assistant, Math/Physics tutor, Tour Guide, Student Club Founder; UMD: Teaching Assistant for Finite Math, Calculus For the Natural Sciences, Calculus III, Differential Equations
-		\end{description}
+		% 	\item[Leadership Experience:]
+		% 	BLC: Student Body President, Resident Assistant, Math/Physics tutor, Tour Guide, Student Club Founder; UMD: Teaching Assistant for Finite Math, Calculus For the Natural Sciences, Calculus III, Differential Equations
+		% \end{description}
+		\justifying
+		
+		\textbf{Languages:}
+			Have worked in \verb!Scala!(top 10\% on Stack Overflow), \verb!Java!, \verb!C!, \verb!R!, \verb!Perl!, \verb!Python!, \LaTeX; Apache Spark(top 5\% on Stack Overflow); Some knowledge of \verb!C++!, \verb!MATLAB!
+
+		\textbf{Applications/Tools:}
+		Mathematica, Windows+Linux CLI, WinCVS, Github(\href{https://www.github.com/EvanOman}{EvanOman}), RStudio, Apache Spark, IntelliJ
+
+		\textbf{Scores/Certificates:}
+		ACT 33(99\%), GRE V: 160(84\%) Q: 163(87\%); Coursera: \href{https://www.coursera.org/account/accomplishments/records/cxq3vN5HB76be56t}{R Programming}, \href{https://www.coursera.org/account/accomplishments/records/Xt3sCA24Qz3Par7M}{Getting and Cleaning Data}, \href{https://www.coursera.org/account/accomplishments/records/yPex7nURcXCYdsse}{Statistical Inference}, \href{https://www.coursera.org/account/accomplishments/records/XMkgJcmHPGtNBXsU}{Exploratory Data Analysis}, \href{https://www.coursera.org/account/accomplishments/records/Qx8qaDCvw9ZNQtqP}{Regression Models}, \href{https://www.coursera.org/account/accomplishments/records/g5LfcvAD5rJuEnGX}{Reproducible Research},
+		\href{https://www.coursera.org/account/accomplishments/verify/ZNTJVMJKSH}{Practical Machine Learning}
+
+		\textbf{Leadership Experience:}
+		BLC: Student Body President, Resident Assistant, Math/Physics tutor, Tour Guide, Student Club Founder; UMD: Teaching Assistant for Finite Math, Calculus For the Natural Sciences, Calculus III, Differential Equations
 \end{document}
