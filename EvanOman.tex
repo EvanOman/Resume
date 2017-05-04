@@ -25,7 +25,7 @@
 
 \definecolor{mygrey}{gray}{.80}
 \centering
-\setlength{\parskip}{3pt}
+\setlength{\parskip}{2.5pt}
 %\onehalfspacing
 \newlength{\mySpacing}
 \setlength{\mySpacing}{0pt}
@@ -33,6 +33,9 @@
 
 \setlist[itemize]{itemsep=0pt,topsep=0pt,partopsep=0pt,parsep=0pt}
 \setlist[description]{itemsep=0pt,topsep=0pt,partopsep=0pt,parsep=0pt}
+
+% Suppresses inter-column space width
+\setlength{\tabcolsep}{0pt}
 
 %%%%%%%%%%% My Custom Commands %%%%%%%%%%%
 
@@ -42,7 +45,7 @@
 % Large Section heading w/ gray background
 \newcommand{\resHeading}[1]{
 	{
-		\begin{tcolorbox}[size=title,oversize, sharp corners, colback=mygrey, colframe=mygrey]%, left=56pt, right=90pt]
+		\begin{tcolorbox}[size=title, sharp corners, colback=mygrey, colframe=mygrey]%, left=56pt, right=90pt]
 			\centering\textbf{\large #1}
 		\end{tcolorbox} 
 	}
@@ -50,7 +53,7 @@
 
 % Two column subsection
 \newcommand{\twoColResSubHeading}[2]{
-	\begin{tabularx}{\textwidth}{Xr}
+	\begin{tabularx}{\columnwidth}{Xr}
 			\textbf{#1} & \textbf{#2}
 	\end{tabularx}
 }
@@ -153,7 +156,6 @@
 	% Skills Section 
 	\resHeading{Skills}
 		\justifying
-		
 		\textbf{Languages:}
 			Have worked in \verb!Scala!(top 10\% on Stack Overflow), \verb!Java!, \verb!C!, \verb!R!, \verb!Perl!, \verb!Python!, \LaTeX; Apache Spark(top 5\% on Stack Overflow); Some knowledge of \verb!C++!, \verb!MATLAB!
 
