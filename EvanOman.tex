@@ -6,69 +6,64 @@
 %
 % This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/ or send a letter to Creative Commons, 171 Second Street, Suite 300, San Francisco, California, 94105, USA.
 
-% Modified by Evan Oman. Original template credit goes to the authors above
-% Note: this is not representative of the code I usually write, more elegant solutions are in the works
+% Modified: 05/2017
+% 	-Heavily modified by Evan Oman. Original template credit goes to the authors above
 
-\documentclass[letterpaper,10pt]{article}
+%%%%%%%%%%% Imports/Settings %%%%%%%%%%%
 
-%\usepackage[empty]{fullpage}
-\usepackage{color,url,hyperref,setspace,parskip,tcolorbox}
-\usepackage[justify]{ragged2e}
-\usepackage{enumitem}
-%\usepackage{graphicx}
-\usepackage{tabularx}
-\usepackage[margin=0.375in]{geometry}
+	% Set the document type, papersize, and fontsize
+	\documentclass[letterpaper,10pt]{article}
 
+	% Import my packages
+	\usepackage{color,url,hyperref,setspace,parskip,tcolorbox,enumitem,tabularx}
 
+	% Import some packages with special parameters
+	\usepackage[justify]{ragged2e}
+	\usepackage[margin=0.375in]{geometry}
 
-\pagenumbering{gobble}
+	% Disable page numbering (my favorite command name BTW)
+	\pagenumbering{gobble}
 
-\definecolor{mygrey}{gray}{.80}
-\centering
-\setlength{\parskip}{2.5pt}
-%\onehalfspacing
-\newlength{\mySpacing}
-\setlength{\mySpacing}{0pt}
-%\raggedbottom
+	% Define the color of my heading backgrounds (80% black)
+	\definecolor{mygrey}{gray}{.80}
 
-\setlist[itemize]{itemsep=0pt,topsep=0pt,partopsep=0pt,parsep=0pt}
-\setlist[description]{itemsep=0pt,topsep=0pt,partopsep=0pt,parsep=0pt}
+	% Set the paragraph spacing, magic number to make things look OK
+	\setlength{\parskip}{2pt}
 
-% Suppresses inter-column space width
-\setlength{\tabcolsep}{0pt}
+	% Set the list spacing, I just want them to be as compact as possible
+	\setlist[itemize]{itemsep=0pt,topsep=0pt,partopsep=0pt,parsep=0pt}
+	\setlist[description]{itemsep=0pt,topsep=0pt,partopsep=0pt,parsep=0pt}
 
-%%%%%%%%%%% My Custom Commands %%%%%%%%%%%
+	% Suppresses inter-column space width
+	\setlength{\tabcolsep}{0pt}
 
+%%%%%%%%%%% Custom Commands %%%%%%%%%%%
 
-\newcommand{\myitem}{\item[$\triangleright$]}
+	% Use a nice looking triangle in place of a bullet point
+	\newcommand{\myitem}{\item[$\triangleright$]}
 
-% Large Section heading w/ gray background
-\newcommand{\resHeading}[1]{
-	{
-		\begin{tcolorbox}[size=title, sharp corners, colback=mygrey, colframe=mygrey]%, left=56pt, right=90pt]
+	% Large Section heading w/ gray background
+	\newcommand{\resHeading}[1]{{
+		\begin{tcolorbox}[size=title, sharp corners, colback=mygrey, colframe=mygrey]
 			\centering\textbf{\large #1}
 		\end{tcolorbox} 
+	}}
+
+	% Two column subsection
+	\newcommand{\twoColSubHeading}[2]{
+		\begin{tabularx}{\columnwidth}{Xr}
+				\textbf{#1} & \textbf{#2}
+		\end{tabularx}
 	}
-}
 
-% Two column subsection
-\newcommand{\twoColResSubHeading}[2]{
-	\begin{tabularx}{\columnwidth}{Xr}
-			\textbf{#1} & \textbf{#2}
-	\end{tabularx}
-}
+	% Three column subsection
+	\newcommand{\threeColSubHeading}[3]{
+		\begin{tabularx}{\textwidth}{XcX}
+				\textbf{#1} & \textit{\textbf{#2}}  & \hfill\textbf{#3}
+		\end{tabularx}
+	}
 
-% Three column subsection
-\newcommand{\threeColResSubHeading}[3]{
-	\begin{tabularx}{\textwidth}{XcX}
-			\textbf{#1} & \textit{\textbf{#2}}  & \hfill\textbf{#3}
-	\end{tabularx}
-}
-
-%%%%%%%%%%% End Custom Commands %%%%%%%%%%%
-
-
-%%%%%% Begin Resume Content %%%%%%
+%%%%%% Resume Content %%%%%%
 
 \begin{document}
 	% Header information 
@@ -80,13 +75,13 @@
 	% Education Section
 	\resHeading{Education}
 		% UMD
-		\threeColResSubHeading{University of MN Duluth}{M.S. Applied Mathematics, CS Minor}{May 2015}
+		\threeColSubHeading{University of MN Duluth}{M.S. Applied Mathematics, CS Minor}{May 2015}
 			\begin{itemize}
-				\myitem Studied under Teaching Assistantship and Chancellor's Fellowship, obtained 20 credits of graduate level CS, \textbf{GPA: 3.67}
-				\myitem Key Courses: Artificial Intelligence(\verb!Java!, \verb!Prolog!), Computer Graphics(\verb!C/C++!), Linear Programming, Natural Language Processing (\verb!Perl!), Advanced Data Structures(\verb!C/C++!), Theory of Computation, Graph Theory, Dynamical Systems
+				\myitem Studied under Teaching Assistantship and Chancellor's Fellowship, 20 credits of graduate level CS coursework, \textbf{GPA: 3.67}
+				\myitem Key Courses: Artificial Intelligence(\verb!Java!, \verb!Prolog!), Computer Graphics(\verb!C/C++!), Linear Programming, Natural Language Processing (\verb!Perl!), Advanced Data Structures(\verb!C/C++!), Theory of Computation, Graph Theory, and Dynamical Systems
 			\end{itemize}
 		% Bethany
-		\threeColResSubHeading{Bethany Lutheran College}{B.A. Mathematics}{May 2013}
+		\threeColSubHeading{Bethany Lutheran College}{B.A. Mathematics}{May 2013}
 			\begin{itemize}
 				\myitem Graduated Magna Cum Laude with \textbf{in-major GPA of 3.8} while keeping several jobs and working to graduate in 3 years
 				\myitem Key Courses: Numerical Analysis; C$\sharp$ Programming I + II; Rings, Modules, and Homological Algebra, Statics + Dynamics
@@ -94,68 +89,67 @@
 	% Work Experience Section
 	\resHeading{Experience}
 		% Black River
-		\threeColResSubHeading{Black River Systems Co.}{Systems/Algorithm Engineer}{May 2015 - Present}
+		\threeColSubHeading{Black River Systems Co.}{Systems/Algorithm Engineer}{May 2015 - Present}
 			\begin{itemize}
-				\myitem Develop algorithms and systems for intelligence, surveillance, and reconnaissance contracts for a variety of DoD agencies
-				\myitem Obtained Secret Level DoD clearance, time split between background research and \verb!Java/MATLAB! prototyping
+				\myitem Develop algorithms and systems for intelligence, surveillance, and reconnaissance contracts with a variety of DoD agencies
+				\myitem Obtained DoD clearance, time split between background research, \verb!Java/MATLAB! prototyping, and full software development
 			\end{itemize}
 		% Salt IO
-		\threeColResSubHeading{Salt IO}{Data Science Consultant (Part Time)}{Nov. 2015 - Sep. 2016}
+		\threeColSubHeading{Salt IO}{Data Science Consultant (Part Time)}{Nov. 2015 - Sep. 2016}
 			\begin{itemize}
 				\myitem Assisted with a variety of data preparation and cleaning tasks on mortgage securitization data using Apache Spark (Scala)
-				\myitem Researched and implemented NLP tools for info extraction and conversational agent problems (Spark, CoreNLP, Python)
+				\myitem Researched and implemented NLP tools for info. extraction and conversational agent problems (Spark, CoreNLP, Python)
 			\end{itemize}
 		% OSI 
-		\threeColResSubHeading{Open Systems International}{Software Engineering Intern}{May 2014 - Nov. 2014}
+		\threeColSubHeading{Open Systems International}{Software Engineering Intern}{May 2014 - Nov. 2014}
 			\begin{itemize}
 				\myitem Completed multiple production quality enhancements on a large power distribution network optimization product. Required rapidly developing of understanding of domain concepts and a large code base written in an unfamiliar language(C)
-				\myitem Participated in regular team code reviews, sprint planning sessions, and training presentations about a variety of topics
+				\myitem Participated in regular team code reviews, sprint planning sessions, and intern training presentations on a variety of topics
 			\end{itemize}
 		% Edmentum
-		\threeColResSubHeading{Edmentum}{Software Development Intern}{May 2013 - Aug. 2013}
+		\threeColSubHeading{Edmentum}{Software Development Intern}{May 2013 - Aug. 2013}
 			\begin{itemize}
 				\myitem Developed a physics coursework web client for use within the Edmentum education suite while on an agile team of interns
-				\myitem Performed sprint planning, product design, code reviews, and product demos; employed JavaScript design patterns
+				\myitem Performed sprint planning, product design, code reviews, and product demonstrations; employed JavaScript design patterns
 			\end{itemize}
 		%Eckhardt Optics
-		% \threeColResSubHeading{Eckhardt Optics LLC}{Software Engineering Intern}{May 2012 - Aug. 2012}
-		% 	\begin{itemize}
-		% 		\myitem Constructed a browser client which allows employer's team to view Bugzilla bugs in a Kanban graphical representation
-		% 	\end{itemize}
+		\threeColSubHeading{Eckhardt Optics LLC}{Software Engineering Intern}{May 2012 - Aug. 2012}
+			\begin{itemize}
+				\myitem Constructed a browser client which allows software teams to view Bugzilla bugs in a Kanban Board graphical representation
+			\end{itemize}
 	% Projects Section
 	\resHeading{Projects}
 		% Aspect Extraction
-		\twoColResSubHeading{Restaurant Review Aspect/Sentiment Extraction(Spark,Scala)}{Salt IO}
+		\twoColSubHeading{Restaurant Review Aspect/Sentiment Extraction(Spark,Scala)}{Salt IO}
 			\begin{itemize}
-				\myitem Extracted specific aspects and sentiments from online reviews of several restaurants using CoreNLP, Spark, and Scala
-				\myitem Researched info extraction algorithms, tested different methods, processed and cleaned data, achieved desired accuracy
+				\myitem Extracted aspects and corresponding sentiments from online reviews of several restaurants using CoreNLP, Spark, and Scala
+				\myitem Researched info. extraction algorithms, tested different methods, processed + cleaned data, and communicated performance
 			\end{itemize}
 		% Feeder Configuration
-		\twoColResSubHeading{Feeder Reconfiguration with Forecast Data(C)}{Open Systems International}
+		\twoColSubHeading{Feeder Reconfiguration with Forecast Data(C)}{Open Systems International}
 			\begin{itemize}
-				\myitem Enhanced OSI's Feeder Reconfiguration product to allow the use of forecast data for all network optimization objectives
+				\myitem Enhanced OSI's Feeder Reconfiguration product to allow the use of forecast data to drive the network optimization module
 				\myitem Achieved this objective by generalizing the program flow to use real time or forecast data, modifying the user interface and databases to allow run mode specification, performing a variety of testing procedures, and updating documentation
 			\end{itemize}
 		% UMD Research
-		\twoColResSubHeading{\href{https://www.researchgate.net/publication/281248352_Infinite_Levels_of_Complexity_in_a_Family_of_One-Dimensional_Singular_Dynamical_Systems}{Dynamical Systems Research}(Python, Mathematica)}{University of MN Duluth}
+		\twoColSubHeading{\href{https://www.researchgate.net/publication/281248352_Infinite_Levels_of_Complexity_in_a_Family_of_One-Dimensional_Singular_Dynamical_Systems}{Dynamical Systems Research}(Python, Mathematica)}{University of MN Duluth}
 			\begin{itemize}
-				\myitem Studied the dynamics of singular perturbations of a family of functions using numerical, visual, and analytical techniques.
-				\myitem Managed to prove the existence of several infinite parameter accumulations. Received paid Summer Research Fellowship.
+				\myitem Studied behavior of singular perturbations on a family of functions using several numerical, visual, and analytical techniques
+				\myitem Managed to prove the existence of several infinite parameter accumulations. Funded by a paid Summer Research Fellowship
 			\end{itemize}
 		% NLP Decision List
-		\twoColResSubHeading{\href{https://github.com/EvanOman/nlp-decision-list}{Decision List for Word Sense Disambiguation}(Perl)}{University of MN Duluth}
+		\twoColSubHeading{\href{https://github.com/EvanOman/nlp-decision-list}{Decision List for Word Sense Disambiguation}(Perl)}{University of MN Duluth}
 			\begin{itemize}
-				\myitem Implemented a machine learning method which used local context to determine the intended sense of a specified word
+				\myitem Implemented a machine learning method which used context to determine the intended sense/meaning of a specified word
 				\myitem Applied object oriented structures within Perl to develop a list of ``collocation'' factors from the training data and sort them according to their correlative strength. When applied to a test set the algorithm achieved 82\% accuracy
 			\end{itemize}
 		% Bethany Thesis
-		\twoColResSubHeading{\href{https://drive.google.com/file/d/0B5IOv9SzzDlvdnowZVpKRzhXOU0/edit?usp=sharing}{\textit{An Introduction to Computational Cubical Homology}}(Some Python)}{Bethany Lutheran College}
+		\twoColSubHeading{\href{https://drive.google.com/file/d/0B5IOv9SzzDlvdnowZVpKRzhXOU0/edit?usp=sharing}{\textit{An Introduction to Computational Cubical Homology}}(Some Python)}{Bethany Lutheran College}
 			\begin{itemize}
 				\myitem Investigated the theory of Computational Homology with a focus on its application to cubical data analysis. The project culminated in an application of existing tools(the \href{http://chomp.rutgers.edu/}{CHomP} utility) to a geometric analysis of Minecraft block data
 			\end{itemize}
 	% Skills Section 
 	\resHeading{Skills}
-		\justifying
 		\textbf{Languages:}
 			Have worked in \verb!Scala!(top 10\% on Stack Overflow), \verb!Java!, \verb!C!, \verb!R!, \verb!Perl!, \verb!Python!, \LaTeX; Apache Spark(top 5\% on Stack Overflow); Some knowledge of \verb!C++!, \verb!MATLAB!
 
