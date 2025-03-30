@@ -1,0 +1,217 @@
+% resume.tex
+%
+% (c) 2002 Matthew Boedicker <mboedick@mboedick.org> (original author) http://mboedick.org
+% (c) 2003-2007 David J. Grant <davidgrant-at-gmail.com> http://www.davidgrant.ca
+% (c) 2007-2010 Todd C. Miller <Todd.Miller@courtesan.com> http://www.courtesan.com/todd
+%
+% This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/ or send a letter to Creative Commons, 171 Second Street, Suite 300, San Francisco, California, 94105, USA.
+
+% Modified: 05/2017
+% 	-Heavily modified by Evan Oman. Original template credit goes to the authors above
+
+%%%%%%%%%%% Imports/Settings %%%%%%%%%%%
+
+	% Set the document type, papersize, and fontsize
+	\documentclass[letterpaper,10pt]{article}
+
+	% Import my packages
+	\usepackage{color,url,hyperref,setspace,parskip,local_sty/tcolorbox,enumitem,tabularx}
+
+	% Import some packages with special parameters
+	\usepackage[justify]{ragged2e}
+	\usepackage[margin=0.375in]{geometry}
+
+	% Disable page numbering (my favorite command name BTW)
+	\pagenumbering{gobble}
+
+	% Define the color of my heading backgrounds (80% black)
+	\definecolor{mygrey}{gray}{.80}
+
+	% Set the paragraph spacing, magic number to make things look OK
+	\setlength{\parskip}{1.5pt}
+
+	% Set the list spacing, I just want them to be as compact as possible
+	\setlist[itemize]{itemsep=0pt,topsep=0pt,partopsep=0pt,parsep=0pt}
+	\setlist[description]{itemsep=0pt,topsep=0pt,partopsep=0pt,parsep=0pt}
+
+	% Suppresses inter-column space width
+	\setlength{\tabcolsep}{0pt}
+
+%%%%%%%%%%% Custom Commands %%%%%%%%%%%
+
+	% Use a nice looking triangle in place of a bullet point
+	\newcommand{\myitem}{\item[$\triangleright$]}
+
+	% Large Section heading w/ gray background
+	\newcommand{\resHeading}[1]{{
+		\begin{tcolorbox}[size=title, sharp corners, colback=mygrey, colframe=mygrey]
+			\centering\textbf{\large #1}
+		\end{tcolorbox}
+	}}
+
+	% Two column subsection
+	\newcommand{\twoColSubHeading}[2]{
+		\begin{tabularx}{\columnwidth}{Xr}
+				\textbf{#1} & \textbf{#2}
+		\end{tabularx}
+	}
+
+	% Three column subsection
+	\newcommand{\threeColSubHeading}[3]{
+		\begin{tabularx}{\textwidth}{XcX}
+				\textbf{#1} & \textit{\textbf{#2}}  & \hfill\textbf{#3}
+		\end{tabularx}
+	}
+
+%%%%%% Resume Content %%%%%%
+
+\begin{document}
+	% Header information
+	\begin{tabularx}{\textwidth}{lXr}
+		\textbf{\Large Evan D. Oman}  &   \\
+		Cell: 612.207.9816 & \hfill\href{http://www.evanoman.com}{www.evanoman.com}\\
+		Residence: Becker, MN& \hfill\href{mailto:evan.david.oman@gmail.com}{evan.david.oman@gmail.com}\\
+	\end{tabularx}
+	% Work Experience Section
+	\resHeading{Experience}
+		% Omega Point
+		\threeColSubHeading{Omega Point Research}{Senior Python Software Engineer}{August 2023 - Present}
+		\begin{itemize}
+			\myitem Build scalable Python data pipelines using Spark/Databricks/Airflow, efficiently processing trillions of financial data points
+			\myitem Collaborate with App and Product teams to deliver backend systems for advanced financial risk and optimization use-cases
+			\myitem Provide technical leadership and mentorship, drive refactoring of legacy systems, contribute to new GenAI-powered features
+		\end{itemize}
+		% ZAIS
+		\threeColSubHeading{ZAIS Group LLC}{Senior Software Architect}{April 2021 - August 2023}
+		\begin{itemize}
+			\myitem Led technical efforts to develop data-focused applications for a portfolio manager with \$7 billion in assets under management
+			\myitem Designed cloud(Azure) architecture, developed data pipelines(Airflow), implemented complex financial calculations(Python)
+			\myitem Worked with executive leadership to set project direction, interpreted domain knowledge from SMEs to guide rest of team
+		\end{itemize}
+		% Consulting
+		\threeColSubHeading{Self-Employed}{Data Science Consultant (Part Time)}{2016, 2020, 2023}
+			\begin{itemize}
+				\myitem Worked part-time as a data science consultant with Salt IO for clients in the financial industry(ZAIS, Wells Fargo, DBRS)
+				\myitem Gathered requirements from clients; researched and evaluated approaches; developed and released software systems
+			\end{itemize}
+		% Black River
+		\threeColSubHeading{Black River Systems Co.}{Software Engineer}{May 2015 - April 2021}
+			\begin{itemize}
+				\myitem Developed analytical software systems and investigated machine learning solutions for several government agencies
+				\myitem Interfaced directly with customers and directed engineering efforts, authored two successful contract proposals (\$1.1M total)
+				\myitem Received shareholder's award for technical work and for starting and leading an informal technical speaking series
+			\end{itemize}
+		% OSI
+		% \threeColSubHeading{Open Systems International}{Software Engineering Intern}{May 2014 - Nov. 2014}
+		% 	\begin{itemize}
+		% 		\myitem Implemented, tested, and documented multiple enhancements for a large power distribution network optimization product
+		% 		\myitem Participated in regular team code reviews, sprint planning sessions, and intern training presentations on a variety of topics
+		% 	\end{itemize}
+		% % Edmentum
+		% \threeColSubHeading{Edmentum}{Software Development Intern}{May 2013 - Aug. 2013}
+		% 	\begin{itemize}
+		% 		\myitem Developed a physics coursework web client for use within the Edmentum education suite while on an agile team of interns
+		% 		\myitem Performed sprint planning, product design, code reviews, and product demonstrations; employed JavaScript design patterns
+		% 	\end{itemize}
+		% %Eckhardt Optics
+		% \threeColSubHeading{Eckhardt Optics LLC}{Software Engineering Intern}{May 2012 - Aug. 2012}
+		% 	\begin{itemize}
+		% 		\myitem Constructed a browser client which allows software teams to view Bugzilla bugs in a Kanban Board graphical representation
+		% 	\end{itemize}
+	% Projects Section
+	\resHeading{Projects}
+		% ISec
+		\twoColSubHeading{Indexes in the OP Platform}{Omega Point Research}
+		\begin{itemize}
+			\myitem Technical lead for an effort to integrate third-party equity indexes into the Omega Point data platform as first-class entities
+			\myitem Helped design app interfaces, developed PySpark code to apply risk models to 100M+ index, model, date combinations
+		\end{itemize}
+		% GenAI
+		\twoColSubHeading{Portfolio Change Summarization using LLMs}{Omega Point Research}
+		\begin{itemize}
+			\myitem Proposed and led internship project to build a Python tool which uses LLMs to summarize changes in portfolio risk/return
+			\myitem After building the initial prototype, I led the effort to integrate the new summarization service into the primary application
+		\end{itemize}
+		% Loanz
+		\twoColSubHeading{Portfolio Testing, Optimization, and Construction}{ZAIS}
+		\begin{itemize}
+			\myitem Led the development of a Python web service which allows portfolio managers to test, optimize, and construct loan portfolios
+			\myitem Helped collect and merge requisite data from varied sources, implemented compliance tests based on legal documentation
+			\myitem Implemented linearly constrained greedy optimization approach based on Excel prototype, developed live data visualization
+		\end{itemize}
+		% LIR
+		\twoColSubHeading{Tenant Name Disambiguation}{Independent Consulting, Wells Fargo}
+		\begin{itemize}
+			\myitem Working to disambiguate tenant names in a dataset of commercial real estate leases (over 100k rows, no ground truth)
+			\myitem Researched approaches, built system around the Python Dedupe library, using clustering metrics to evaluate performance
+		\end{itemize}
+		% CLO Model
+		\twoColSubHeading{Simulation Model Refactoring, Performance Improvements}{ZAIS}
+		\begin{itemize}
+			\myitem Improved Monte Carlo simulation model by adding tests, fixing bugs, improving data access, and improving total runtime
+			\myitem 3x runtime improvement using line profiler and additional Numba, prototyped 250x improvement using 500 AWS $\lambda$ functions
+		\end{itemize}
+		% LIR
+		\twoColSubHeading{Loan Implied Ratings Model}{Independent Consulting, ZAIS}
+		\begin{itemize}
+			\myitem Worked closely with SME to translate an Excel model into a more versatile Python app. (as both CLI tool and Teams Bot)
+			\myitem Reverse-engineered process, developed a more efficient approach using a quadratic programming formulation of the problem
+		\end{itemize}
+		% RF
+		\twoColSubHeading{Low SWaP Threat Detection System}{Black River Systems}
+			\begin{itemize}
+				\myitem Project lead for R\&D of an edge computing system which applied deep learning techniques for signal ID and threat detection
+				\myitem Collected data, trained and tuned models (Keras, Ray, Docker), developed integrated inference app (Python, Redis, UDP)
+			\end{itemize}
+		% Software Improvement
+		\twoColSubHeading{Software Improvement Effort}{Black River Systems}
+			\begin{itemize}
+				\myitem Expanded the quality, reliability, availability, and feature sets of a suite of legacy, multi-platform \verb!C++! desktop applications
+				\myitem Authored unit tests (Catch2), refactored complex code (\verb!C++!), developed automated testing system (Java), led adoption of automated testing, GitLab CI, and Docker
+			\end{itemize}
+		% Scheduling Algorithms
+		% \twoColSubHeading{Sensor Scheduling Research}{Black River Systems}
+		% 	\begin{itemize}
+		% 		\myitem Helped research and prototype sensor scheduling algorithms (0-1 integer programming, meta-heuristics) and developed a simulation framework (Matlab) to evaluate the performance of these approaches
+		% 	\end{itemize}
+		% Aspect Extraction
+		% \twoColSubHeading{Restaurant Review Aspect/Sentiment Extraction(Spark, Scala)}{Consulting Effort}
+		% 	\begin{itemize}
+		% 		\myitem Extracted aspects and corresponding sentiments from online reviews of several restaurants using CoreNLP, Spark, and Scala
+		% 		\myitem Researched info. extraction algorithms, tested different methods, processed \& cleaned data, and communicated performance
+		% 	\end{itemize}
+		% UMD Research
+		% \twoColSubHeading{\href{https://www.researchgate.net/publication/281248352_Infinite_Levels_of_Complexity_in_a_Family_of_One-Dimensional_Singular_Dynamical_Systems}{Dynamical Systems Research}(Python, Mathematica)}{University of MN Duluth}
+		% 	\begin{itemize}
+		% 		\myitem Studied behavior of singular perturbations on a family of functions using several numerical, visual, and analytical techniques
+		% 		% \myitem Managed to prove the existence of several infinite parameter accumulations. Funded by a paid Summer Research Fellowship
+		% 	\end{itemize}
+		% NLP Decision List
+		% \twoColSubHeading{\href{https://github.com/EvanOman/nlp-decision-list}{Decision List for Word Sense Disambiguation}(Perl)}{University of MN Duluth}
+		% 	\begin{itemize}
+		% 		\myitem Implemented a machine learning method which used context to determine the intended sense/meaning of a specified word
+		% 		\myitem Applied object oriented structures within Perl to develop a list of ``collocation'' factors from the training data and sort them according to their correlative strength. When applied to a test set the algorithm achieved 82\% accuracy
+		% 	\end{itemize}
+	% Skills Section
+	% Education Section
+	\resHeading{Education}
+		% UMD
+		\threeColSubHeading{University of MN Duluth}{M.S. Applied Mathematics, CS Minor}{May 2015}
+			\begin{itemize}
+				\myitem Studied under Teaching Assistantship and Chancellor's Fellowship, 20 credits of graduate level CS coursework, \textbf{GPA: 3.67}
+				% \myitem Key Courses: Artificial Intelligence(\verb!Java!, \verb!Prolog!), Computer Graphics(\verb!C/C++!), Linear Programming, Natural Language Processing (\verb!Perl!), Advanced Data Structures(\verb!C/C++!), Theory of Computation, Graph Theory, and Dynamical Systems
+			\end{itemize}
+		% Bethany
+		\threeColSubHeading{Bethany Lutheran College}{B.A. Mathematics}{May 2013}
+			\begin{itemize}
+				\myitem Graduated Magna Cum Laude with \textbf{in-major GPA of 3.8}, 2013 Student Body President, graduated in three years
+			\end{itemize}
+	\resHeading{Skills}
+		\textbf{Languages/Frameworks/Tools:}
+		Have worked in \verb!Python!, \verb!Java!, \verb!Scala!, \verb!C!, \verb!R!, \verb!Perl!, \LaTeX (\href{https://github.com/EvanOman/Resume}{link to r\'esum\'e src}); Flask, PySpark, Docker, \verb!git!(Github: \href{https://www.github.com/EvanOman}{EvanOman}), Gitlab/Github/Azure Devops CI, some Linux; Excited about Cursor, GPT/Claude, and MCP
+
+		% \textbf{Scores/Certificates:}
+		% ACT 33(99\%), GRE V: 160(84\%) Q: 163(87\%); Coursera: \href{https://www.coursera.org/account/accomplishments/records/cxq3vN5HB76be56t}{R Programming}, \href{https://www.coursera.org/account/accomplishments/records/Xt3sCA24Qz3Par7M}{Getting and Cleaning Data}, \href{https://www.coursera.org/account/accomplishments/records/yPex7nURcXCYdsse}{Statistical Inference}, \href{https://www.coursera.org/account/accomplishments/records/XMkgJcmHPGtNBXsU}{Exploratory Data Analysis}, \href{https://www.coursera.org/account/accomplishments/records/Qx8qaDCvw9ZNQtqP}{Regression Models}, \href{https://www.coursera.org/account/accomplishments/records/g5LfcvAD5rJuEnGX}{Reproducible Research},
+		% \href{https://www.coursera.org/account/accomplishments/verify/ZNTJVMJKSH}{Practical Machine Learning}
+
+\end{document}
