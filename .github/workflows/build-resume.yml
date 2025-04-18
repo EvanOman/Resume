@@ -1,0 +1,51 @@
+name: Build Resume
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: 
+      image: pandoc/latex:latest-ubuntu
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Install required LaTeX packages
+        run: |
+          tlmgr update --self
+          tlmgr install \
+            tcolorbox \
+            enumitem \
+            tools \
+            ragged2e \
+            geometry \
+            url \
+            hyperref \
+            setspace \
+            parskip
+      
+      - name: Build PDF
+        run: |
+          pdflatex EvanOman.tex
+          
+      - name: Install git
+        run: |
+          apt-get update
+          apt-get install -y git-core
+          
+      - name: Prepare deployment
+        run: |
+          mkdir -p deploy
+          cp EvanOman.pdf deploy/
+          
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./deploy
+          publish_branch: gh-pages
+          keep_files: false
+          force_orphan: true
+          commit_message: ${{ github.event.head_commit.message }}
