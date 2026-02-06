@@ -76,7 +76,7 @@
 
 	% Summary/Objective
 	\resHeading{Summary}
-	\noindent AI engineer shipping production agentic systems in financial services, operating at staff level. Delivered a conversational AI portfolio assistant, a replayable workflow engine, and LLM evaluation pipelines. 10+ years in software dev (data, ML, AI).
+	\noindent Staff-level AI engineer shipping production agentic systems in financial services. Delivered a conversational AI portfolio assistant, a replayable workflow engine, and LLM evaluation pipelines. 10+ years in software dev (data, ML, AI).
 
 	% Work Experience Section
 	\resHeading{Experience}
@@ -91,7 +91,7 @@
 		% ZAIS
 		\threeColSubHeading{ZAIS Group LLC}{Senior Software Architect}{April 2021 - August 2023}
 		\begin{itemize}
-			\myitem Led internal tooling for a portfolio management firm with \$5.4 billion AUM; built data applications, analytics, and reporting
+			\myitem Led internal tooling dev for a portfolio management firm with \$5.4B AUM; built data applications, analytics, and reporting
 			\myitem Designed Azure cloud architecture; Airflow pipelines for multi-vendor position data synthesis; built portfolio analysis tools
 			\myitem Collaborated with executives on product roadmap; self-taught structured credit domain to make informed technical decisions
 		\end{itemize}
@@ -101,13 +101,18 @@
 				\myitem Developed analytical software and ML solutions for government agencies; held Secret clearance for classified project work
 				\myitem Authored two successful contract proposals (\$1.1M total); recognized for starting and leading a technical talk series
 			\end{itemize}
+		% Consulting
+		\threeColSubHeading{Independent Consultant}{Data Science / Software Engineering}{2016, 2020, 2023}
+			\begin{itemize}
+				\myitem Part-time consulting for financial clients (ZAIS, Wells Fargo, DBRS); PySpark pipelines, financial modeling, data cleaning
+			\end{itemize}
 
 	% Projects Section
 	\resHeading{Selected Projects}
 		% Financial AI Agent Service
 		\twoColSubHeading{AI Teammate for Portfolio Analysis}{Omega Point Research}
 		\begin{itemize}
-			\myitem Owned Python service for the AI chat feature: users ask portfolio questions, get data tables and charts---stable 4+ months
+			\myitem Owned Python service for AI chat: users ask portfolio questions, get data tables and charts---shipped with product launch
 			\myitem Authored architecture after analyzing options; led cross-team discovery (AI, App, Platform); locked in API contracts early
 			\myitem Built repository abstraction with dependency injection; added tracing for debugging; enabled AI team to test agents locally
 		\end{itemize}
@@ -122,19 +127,19 @@
 		\twoColSubHeading{AI Evaluation \& Observability Pipeline}{Omega Point Research}
 		\begin{itemize}
 			\myitem Built LLM-as-Judge framework with checklist validation; transformed team from ad-hoc prompt tuning to regression testing
-			\myitem Led Arize vendor evaluation with decision rubric; identified output token verbosity as latency driver; tuned responses
-		\end{itemize}
-		% Highlight Helper
-		\twoColSubHeading{Highlight Helper}{Side Project}
-		\begin{itemize}
-			\myitem Built app that extracts text from photos via natural language queries; Vision API + LLM returns only requested content
+			\myitem Led vendor evaluation and Arize integration; enabled live evals and full reasoning traces for debugging production failures
 		\end{itemize}
 		% IaaS
 		\twoColSubHeading{Index-as-a-Security Platform}{Omega Point Research}
 		\begin{itemize}
-			\myitem Built pipelines mapping index constituents to risk models and computing factor exposures (1B+ data points, decades of history)
+			\myitem Built data pipelines mapping index constituents to risk models and computing factor exposures; processes 1B+ data points
 			\myitem Set up vendor integrations and a monitoring dashboard; built Go-Python bridge for PySpark; achieved 60x write speedup
 			\myitem Debugged C extension core dumps using GDB + LLM (early 2024); contributed 2 bug fixes upstream to gopy open source
+		\end{itemize}
+		% Highlight Helper
+		\twoColSubHeading{\underline{\href{https://github.com/EvanOman/highlight-helper}{Highlight Helper}}}{Side Project}
+		\begin{itemize}
+			\myitem Built app that extracts text from photos using natural language queries; Vision API + LLM returns only requested content
 		\end{itemize}
 		% Financial Model Engineering
 		\twoColSubHeading{Financial Model Engineering}{ZAIS}
@@ -152,9 +157,9 @@
 	% Skills Section
 	\resHeading{Skills}
 		\textbf{AI/ML:} Production agentic systems, LLM evaluation (LLM-as-Judge), prompt engineering, RAG, DSPy, Claude/OpenAI, Arize \\
-		\textbf{AI Dev Tools:} Claude Code, Cursor, voice dictation, agent orchestration, Skills, MCP (Model Context Protocol) \\
+		\textbf{AI Dev Tools:} Claude Code, Cursor, agent orchestration, custom skills/prompts, MCP (Model Context Protocol) \\
 		\textbf{Languages:} Python, SQL, Go, Scala, Java, \LaTeX{} \quad \textbf{Data:} PySpark, Databricks, Airflow, Delta Lake, medallion architecture \\
-		\textbf{Cloud/Infra:} AWS (Lambda, S3), Azure, Docker, FastAPI, PostgreSQL \quad \textbf{GitHub:} \underline{\href{https://www.github.com/EvanOman}{EvanOman}}
+		\textbf{Cloud/Infra:} AWS (Lambda, S3), Azure, Docker, FastAPI, PostgreSQL
 
 	% Education Section
 	\resHeading{Education}
