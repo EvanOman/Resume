@@ -17,17 +17,24 @@
 	\documentclass[letterpaper,10pt]{article}
 
 	% Import my packages
-	\usepackage{color,url,hyperref,setspace,parskip,local_sty/tcolorbox,enumitem,tabularx}
+	\usepackage{color,url,hyperref,setspace,parskip,local_sty/tcolorbox,enumitem,tabularx,fancyhdr}
 
 	% Import some packages with special parameters
 	\usepackage[justify]{ragged2e}
-	\usepackage[margin=0.375in]{geometry}
+	\usepackage[margin=0.375in,bottom=0.4in,footskip=0.15in]{geometry}
 
-	% Disable page numbering (my favorite command name BTW)
-	\pagenumbering{gobble}
+	% Set up footer with build info
+	\pagestyle{fancy}
+	\fancyhf{} % Clear all headers/footers
+	\renewcommand{\headrulewidth}{0pt} % No header line
+	\renewcommand{\footrulewidth}{0pt} % No footer line
+	\fancyfoot[C]{\textcolor{footergrey}{\tiny Build BUILDID · BUILDDATE · \href{BUILDURL}{View build}}}
 
 	% Define the color of my heading backgrounds (80% black)
 	\definecolor{mygrey}{gray}{.80}
+
+	% Light gray for footer text
+	\definecolor{footergrey}{gray}{.60}
 
 	% Set the paragraph spacing, magic number to make things look OK
 	\setlength{\parskip}{1.5pt}
